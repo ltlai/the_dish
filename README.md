@@ -1,2 +1,4 @@
-the_dish
+The Dish
 ========
+
+Rotten Tomatoes for Restaurants
