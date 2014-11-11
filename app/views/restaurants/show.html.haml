@@ -1,3 +1,6 @@
 %h1= @restaurant.name
 
 = @restaurant.display_address
+
+%h1= @restaurant.score
+= "#{@restaurant.vote_count} votes"
