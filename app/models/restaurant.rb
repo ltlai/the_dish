@@ -1,4 +1,6 @@
 class Restaurant < ActiveRecord::Base
+  validates :name, presence: true
+
   def self.search(search)
     num_terms = search.split.length
     query = (['name LIKE ?'] * num_terms).join(' AND ')
