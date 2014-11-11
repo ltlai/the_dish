@@ -4,3 +4,10 @@
 
 %h1= @restaurant.score
 = "#{@restaurant.vote_count} votes"
+
+%br
+%br
+
+Would you recommend this restaurant?
+= link_to "Yes", upvote_restaurant_path(@restaurant), method: :post
+= link_to "No", downvote_restaurant_path(@restaurant), method: :post

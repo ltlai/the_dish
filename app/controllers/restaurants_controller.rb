@@ -16,14 +16,29 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def upvote
+    restaurant = Restaurant.find(params[:id])
+    restaurant.increment!(:fresh_votes)
+
+    redirect_to restaurant
+  end
+
+  def downvote
+    restaurant = Restaurant.find(params[:id])
+    restaurant.increment!(:rotten_votes)
+
+    redirect_to restaurant
+  end
+
   private
 
   def restaurant_params
-    params.required(:restaurant).permit(
-      :name, 
-      :street_address, 
-      :city, 
-      :state
-    )
+    params.required(:restaurant)
+      .permit(
+        :name,
+        :street_address,
+        :city,
+        :state
+      )
   end
 end
