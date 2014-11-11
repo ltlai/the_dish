@@ -1,4 +1,9 @@
 class RestaurantsController < ApplicationController
+  def search
+    @search = params[:search]
+    @restaurants = Restaurant.search(@search)
+  end
+
   def new
     @restaurant = Restaurant.new
   end

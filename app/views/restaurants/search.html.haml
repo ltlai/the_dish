@@ -1,0 +1,6 @@
+%h1= "Search Results for '#{@search}'"
+
+%ul
+  - @restaurants.each do |restaurant|
+    %li= link_to "#{restaurant.name}", restaurant
+    %br

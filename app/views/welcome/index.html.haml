@@ -1,0 +1,7 @@
+%h1 Welcome to The Dish!
+
+= form_tag search_restaurants_path, method: 'get' do
+  = label_tag :search, 'Search for a restaurant:'
+  = text_field_tag :search
+  = submit_tag 'Search'
+  

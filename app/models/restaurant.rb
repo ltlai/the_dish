@@ -1,4 +1,10 @@
 class Restaurant < ActiveRecord::Base
+  def self.search(search)
+    num_terms = search.split.length
+    query = (['name LIKE ?'] * num_terms).join(' AND ')
+    Restaurant.where([query] + search.split.map { |term| "%#{term}%" })
+  end
+
   def display_address
     "#{street_address}, #{city}, #{state}"
   end
