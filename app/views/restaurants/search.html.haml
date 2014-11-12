@@ -4,3 +4,6 @@
   - @restaurants.each do |restaurant|
     %li= link_to "#{restaurant.name}", restaurant
     %br
+
+%h3 Don't see what you're looking for?
+= link_to "Add a New Restaurant", new_restaurant_path(@restaurant)
